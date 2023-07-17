@@ -7,6 +7,7 @@ import { logout } from "../slices/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import logo1 from "../assets/logo1.png";
 
 // import { LinkContainer } from "react-router-dom";
 
@@ -40,8 +41,12 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
-              <img src={logo} alt="Proshop"></img>
-              Proshop
+              <img
+                src={logo1}
+                alt="BetterBuys"
+                style={{ maxHeight: "40px", marginRight: "10px" }}
+              />
+              BetterBuys
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
