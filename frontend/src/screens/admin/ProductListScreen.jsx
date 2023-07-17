@@ -9,9 +9,17 @@ import {
 } from "../../slices/productApiSlice";
 import { toast } from "react-toastify";
 import { useDeleteProductMutation } from "../../slices/productApiSlice";
+import { useParams } from "react-router-dom";
 
 const ProductListScreen = () => {
-  const { data: products, refetch, isLoading, error } = useGetProductsQuery();
+  const { keyword } = useParams();
+  const {
+    data: products,
+    refetch,
+    isLoading,
+    error,
+  } = useGetProductsQuery({ keyword });
+  console.log(products);
   const [createProduct, { isLoading: loadingCreate }] =
     useCreateProductMutation();
   const [deleteProduct, { isLoading: loadingDelete }] =
