@@ -10,6 +10,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import cors from "cors";
 
 connectDb();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 //Cookie parser middleware
 
 app.use(cookieParser());
+app.use(cors());
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
